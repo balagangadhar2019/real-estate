@@ -159,6 +159,17 @@
             box-shadow: 0 10px 20px rgba(212, 172, 13, 0.3);
         }
 
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--dark);
+        }
+
         .menu-toggle {
             display: none;
             color: white;
@@ -561,6 +572,65 @@
 
         .property-card:hover .property-price {
             color: var(--land-green);
+        }
+
+        /* Layout Plan Section */
+        .layout-plan {
+            padding: 80px 5%;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .layout-container {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        .layout-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .layout-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .layout-download {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 134, 193, 0.3);
         }
 
         /* Enhanced Map Section */
@@ -1449,6 +1519,7 @@
             <ul id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#lands">Lands</a></li>
+                <li><a href="#layout">Layout Plan</a></li>
                 <li><a href="#property-types">Property Types</a></li>
                 <li><a href="#map">Location</a></li>
                 <li><a href="#about">About</a></li>
@@ -1480,7 +1551,7 @@
                 <a href="#lands" class="cta-button magnetic-btn">
                     <span class="btn-text">Explore Lands</span>
                 </a>
-                <a href="#contact" class="cta-button magnetic-btn" style="background: transparent; border: 2px solid white;">
+                <a href="#contact" class="cta-button magnetic-btn secondary">
                     <span class="btn-text">Book Site Visit</span>
                 </a>
             </div>
@@ -1532,6 +1603,30 @@
                     <h4>Ground Water</h4>
                     <p>Good</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout Plan Section -->
+    <section class="layout-plan" id="layout">
+        <div class="particles" id="particles8"></div>
+        <h2 class="section-title">Layout Plan</h2>
+        <p class="section-subtitle">Explore our comprehensive layout plan for GVR Nagar, Pamur Road, Kandukur</p>
+        
+        <div class="layout-container">
+            <div class="layout-image">
+                <img src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80" alt="GSRAO Infrastructure Layout Plan">
+            </div>
+            
+            <div class="layout-download">
+                <a href="#" class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </a>
+                <a href="#" class="download-btn">
+                    <i class="fas fa-print"></i>
+                    Print Layout
+                </a>
             </div>
         </div>
     </section>
@@ -1857,7 +1952,7 @@
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" placeholder="enter your name" required>
+                        <input type="text" id="name" placeholder="Enter your name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
@@ -1865,7 +1960,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="enter your  moblie number" required>
+                        <input type="tel" id="phone" placeholder="Enter your mobile number" required>
                     </div>
                     <div class="form-group">
                         <label for="interest">I'm interested in</label>
@@ -1877,6 +1972,17 @@
                             <option value="gated-communities">Gated Communities</option>
                             <option value="approved-layouts">Approved Layouts</option>
                             <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" required>
+                            <option value="">Select budget range</option>
+                            <option value="10-20">₹ 10-20 Lakhs</option>
+                            <option value="20-30">₹ 20-30 Lakhs</option>
+                            <option value="30-50">₹ 30-50 Lakhs</option>
+                            <option value="50-75">₹ 50-75 Lakhs</option>
+                            <option value="75+">₹ 75 Lakhs+</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -1913,6 +2019,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#lands">Lands</a></li>
+                    <li><a href="#layout">Layout Plan</a></li>
                     <li><a href="#property-types">Property Types</a></li>
                     <li><a href="#map">Location</a></li>
                     <li><a href="#about">About Us</a></li>
@@ -2041,6 +2148,18 @@
             y: 0,
             duration: 0.5,
             stagger: 0.2
+        });
+
+        gsap.to('.layout-container', {
+            scrollTrigger: {
+                trigger: '.layout-container',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1
         });
 
         gsap.to('.property-card', {
@@ -2254,6 +2373,11 @@
             
             // In a real implementation, you would use a service like Formspree, EmailJS, or your own backend
             console.log('Sending email:', emailBody);
+            
+            // For demonstration, we'll simulate email sending
+            setTimeout(() => {
+                console.log('Email sent successfully');
+            }, 1000);
         }
 
         function sendWhatsAppMessage(formData) {
@@ -2316,6 +2440,7 @@ Message: ${formData.message}`;
         createParticles('particles5', 15);
         createParticles('particles6', 15);
         createParticles('particles7', 15);
+        createParticles('particles8', 15);
 
         // 3D Plot Visualization with Three.js
         let scene, camera, renderer, controls, plot;
